@@ -1,0 +1,37 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Fortran module files
+*.mod
+*.smod
+
+# Executables
+*.exe
+*.out
+*.app
+gore
+
+#various
+*.ini
+
+#folders
+.vscode
+.cache
+build
+glad
+assimp
+GLFW
+glm
+imgui
+KHR
+stb_image
+tracy
