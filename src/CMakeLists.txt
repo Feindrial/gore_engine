@@ -1,5 +1,5 @@
 add_subdirectory(imgui)
-#add_subdirectory(tracy)
+add_subdirectory(core)
 
 add_library(gore_engine STATIC
     core/game_state.cpp
@@ -45,10 +45,9 @@ add_library(gore_engine STATIC
     util/level_editor.cpp
     util/logger.cpp  
     util/platform.cpp
-    util/util.cpp)
+    util/util.cpp "core/error_macros.cpp" "core/log_medium.cpp" "core/logger.cpp" "core/basic_logger.cpp")
 add_library(gore::engine ALIAS gore_engine)
 
-target_include_directories(gore_engine 
-    PRIVATE ${CMAKE_SOURCE_DIR}/include
-    PRIVATE ${CMAKE_SOURCE_DIR}/mouthful_of_blood #this is bad
+target_link_libraries(gore_engine
+    PUBLIC gore::gcore
 )

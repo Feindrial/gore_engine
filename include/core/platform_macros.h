@@ -1,5 +1,4 @@
-#ifndef GORE_PLATFORM_MACROS_H
-#define GORE_PLATFORM_MACROS_H
+#pragma once
 
 #if defined(_WIN32) || defined(__WIN64)
 	#include <Windows.h>
@@ -28,11 +27,13 @@
 #endif
 
 #ifndef __UNLIKELY
-	#define __UNLIKELY [[unlikely]]
+	#define __UNLIKELY(x) \
+		(x) [[unlikely]] 
 #endif
 
 #ifndef __LIKELY
-	#define __LIKELY [[likely]]
+	#define __LIKELY(x) \
+		(x) [[likely]]
 #endif
 
 #ifndef __MAYBE_UNUSED
@@ -45,7 +46,4 @@
 
 #ifndef __NO_EXCEPT
 	#define __NO_EXCEPT noexcept
-#endif
-
-
 #endif
